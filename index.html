@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Michael – Web Developer</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Inter", sans-serif;
+        }
+
+        body {
+            background: #0f0f0f;
+            color: white;
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 60px 10%;
+            text-align: center;
+            background: linear-gradient(145deg, #1b1b1b, #000);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+
+        section {
+            padding: 60px 10%;
+        }
+
+        h2 {
+            font-size: 2.3rem;
+            margin-bottom: 20px;
+            color: #8fff8f;
+        }
+
+        .skills-list,
+        .services-list,
+        .build-list,
+        .why-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 8px 0;
+            padding-left: 10px;
+            border-left: 2px solid #8fff8f;
+        }
+
+        .cta {
+            text-align: center;
+            padding: 40px 10%;
+        }
+
+        .cta button {
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            border: none;
+            background: #8fff8f;
+            color: #000;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .cta button:hover {
+            background: #76e876;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 10%;
+            opacity: 0.7;
+        }
+
+        /* Animations */
+        [data-animate] {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: 0.7s ease-out;
+        }
+
+        [data-animate].visible {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO -->
+    <header data-animate>
+        <h1>Modern, Fast & Responsive Websites</h1>
+        <p>Custom-built with HTML, CSS & JavaScript</p>
+    </header>
+
+    <!-- ABOUT -->
+    <section data-animate>
+        <h2>About Me</h2>
+        <p>Hi, I’m <strong>Michael</strong>, a front-end developer specializing in high-performance and visually modern websites. I build everything clean, responsive, and scalable.</p>
+        <br />
+
+        <ul class="skills-list">
+            <li>HTML5</li>
+            <li>CSS3 / Flexbox / Grid</li>
+            <li>JavaScript (ES6)</li>
+            <li>Responsive Design</li>
+            <li>UI/UX Layout Structuring</li>
+            <li>Animations & Transitions</li>
+            <li>Performance Optimization</li>
+            <li>SEO-Friendly Markup</li>
+            <li>Clear Coding Structure</li>
+            <li>Debugging & UX Improvements</li>
+        </ul>
+    </section>
+
+    <!-- WHAT I BUILD -->
+    <section data-animate>
+        <h2>What I Build</h2>
+
+        <ul class="build-list">
+            <li>Modern business websites</li>
+            <li>Landing pages & sales funnels</li>
+            <li>Personal portfolios & creator pages</li>
+            <li>Service websites & product pages</li>
+            <li>Real estate & automotive layouts</li>
+            <li>Custom UI components</li>
+            <li>Figma → HTML/CSS/JS conversions</li>
+            <li>Fully responsive grid systems</li>
+        </ul>
+    </section>
+
+    <!-- WHY -->
+    <section data-animate>
+        <h2>Why Clients Choose Me</h2>
+
+        <ul class="why-list">
+            <li>Clean & modern UI</li>
+            <li>Fully responsive on all devices</li>
+            <li>Smooth animations & transitions</li>
+            <li>Mobile-first design</li>
+            <li>Organized, scalable code</li>
+            <li>Fast loading performance</li>
+            <li>Easy to extend & update</li>
+            <li>Professional communication</li>
+        </ul>
+    </section>
+
+    <!-- SERVICES -->
+    <section data-animate>
+        <h2>Services</h2>
+
+        <ul class="services-list">
+            <li><strong>Website Development:</strong> Custom HTML/CSS/JS websites</li>
+            <li><strong>UI/UX Layout Design:</strong> Clean visual hierarchy</li>
+            <li><strong>Component Design:</strong> Buttons, cards, menus, animations</li>
+            <li><strong>Full Front-End Setup:</strong> Responsive frameworks & systems</li>
+        </ul>
+    </section>
+
+    <!-- CTA -->
+    <div class="cta" data-animate>
+        <button>Contact Me</button>
+    </div>
+
+    <footer>
+        © 2025 Michael. All rights reserved.
+    </footer>
+
+    <!-- Scroll Animation Script -->
+    <script>
+        const animatedElements = document.querySelectorAll("[data-animate]");
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                }
+            });
+        }, { threshold: 0.2 });
+
+        animatedElements.forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>
